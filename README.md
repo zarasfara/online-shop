@@ -36,11 +36,11 @@
     ```shell
     docker ps
     ```
-6. Зайдите в контейнер с приложением
+6. Зайдите в контейнер с приложением используя команду и скопируя `CONTAINER ID` или `NAME` 
     ```shell
     docker exec -it <container-php-fpm> bash
     ```
 7. Запустите скрипт
     ```shell
-    shell.sh
+    ./setup.sh
     ```
