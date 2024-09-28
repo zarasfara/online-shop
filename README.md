@@ -2,7 +2,7 @@
 
 ## Технологии
 
-- php8.2
+- php8.3
 - Laravel
 - PostgresSQL
 
@@ -13,14 +13,16 @@
 1. Клонируйте репозиторий
 
     ```shell
-    git clone <repository-url>
+    git clone git@github.com:zarasfara/online-shop.git
     ```
 
 2. Копируйте .env.example .env
+
+    Linux:
     ```shell
     cp .env.example .env
     ```
-   или
+   Windows:
     ```shell
     copy .env.example .env
     ```
@@ -36,7 +38,7 @@
     ```shell
     docker ps
     ```
-6. Зайдите в контейнер с приложением используя команду и скопируя `CONTAINER ID` или `NAME` 
+6. Зайдите в контейнер с приложением используя команду и скопируя `CONTAINER ID` или `NAME` из прошлой команды
     ```shell
     docker exec -it <container-php-fpm> bash
     ```
