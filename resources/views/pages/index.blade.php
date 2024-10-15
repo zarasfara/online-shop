@@ -1,0 +1,47 @@
+@extends('layouts.base')
+@php
+    /* @var \App\Models\Genre[] $genres  */
+    /* @var \App\Models\Book[] $books  */
+@endphp
+
+@section('title', 'Главная страница')
+
+@section('content')
+    <div class="mb-3">
+        <form action="" method="GET">
+            <div class="row">
+                <div class="col">
+                    <label for="title" class="form-label">Название книги</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                </div>
+                <div class="col">
+                    <label for="author" class="form-label">Автор</label>
+                    <input type="text" class="form-control" id="author" name="author">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="genre" class="form-label">Жанры</label>
+                <select class="form-select" id="genre" name="genres[]" multiple>
+                    <option value="title">title</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Применить фильтр</button>
+        </form>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+            <div class="col">
+                @include('components.card-book')
+            </div>
+            <div class="alert alert-danger" role="alert">
+                Ничего не найдено!
+            </div>
+    </div>
+
+    @if(session('success'))
+        <x-toasts.success-toast :message="session('success')" />
+    @endif
+@endsection
+
+@push('scripts')
+    <script src="{{asset('assets/client/js/index.js')}}"></script>
+@endpush
